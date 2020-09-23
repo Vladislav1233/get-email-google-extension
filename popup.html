@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div>
-        <label for="ge-search">Введите имя сотрудника</label>
-        <input type="text" id="ge-search" name="ge-search" />
+<body class="p-3">
+    <div class="page-wrapper">
+        <form>
+            <div class="form-group">
+                <label for="ge-search" class="font-weight-bold">Введите имя сотрудника</label>
+                <input class="form-control" type="text" id="ge-search" name="ge-search" />
+            </div>
+        </form>
+        <ul id="list" class="list-group">
+            <!-- <li>
+                <div>Валерий Сиротин</div>
+                <div>valeri@irlix.com</div>
+            </li>
+            <li>
+                <div>Андрей Кирпичный</div>
+                <div>kirpich@irlix.com</div>
+            </li> -->
+        </ul>
     </div>
-    <ul id="list">
-        <!-- <li>
-            <div>Валерий Сиротин</div>
-            <div>valeri@irlix.com</div>
-        </li>
-        <li>
-            <div>Андрей Кирпичный</div>
-            <div>kirpich@irlix.com</div>
-        </li> -->
-    </ul>
     <script src="popup.js"></script>
 </body>
 </html>
