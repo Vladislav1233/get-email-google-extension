@@ -13,7 +13,6 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "tabs",
-    "https://drive.google.com/*"
+    "tabs"
   ]
-} 
+}
