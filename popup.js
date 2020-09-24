@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   let searchField = document.getElementById('ge-search');
   let timerId;
+  let ul = document.getElementById('list');
 
   searchField.oninput = function() {
-    let ul = document.getElementById('list');
 
     function removeItems() {
       while (ul.firstChild) {
@@ -50,5 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     return result;
   }
+
+  ul.addEventListener('click', function(event) {
+    let target = event.target.closest('li');
+    navigator.clipboard.writeText(target.childNodes[1].textContent)
+  })
   
 }, false)
