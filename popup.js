@@ -1,19 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-  function getListContent() {
+  let searchField = document.getElementById('ge-search');
+  let timerId;
+
+  searchField.oninput = function() {
+    let ul = document.getElementById('list');
+
+    function removeItems() {
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+      }
+    };
+
+    if(searchField.value.length) {
+      clearTimeout(timerId);
+      timerId = setTimeout(function() {
+        removeItems();
+        ul.append(...getListContent(searchField.value));
+      }, 500)
+    } else {
+      setTimeout(function() {
+        removeItems();
+      }, 500)
+    }
+  };
+
+  function getListContent(searchData) {
     let result = [];
-    let name = 'Андрей Инкерман';
-    let mail = 'inkerman@irlix.com';
-  
-    for(let i=1; i<=3; i++) {
+    const data = [{
+      name: 'Довженко Владислав',
+      mail: 'vladislav.dovzhenko@irlix.ru'
+    }, {
+      name: 'Гришин Максим',
+      mail: 'maksim.grishin@irlix.ru'
+    }];
+
+    let resultSearch = data.filter((item) => {
+      if(item.name.match(searchData)) {
+        return true
+      }
+      return false
+    });
+
+    resultSearch.forEach((item) => {
       let li = document.createElement('li');
       li.className = 'list-group-item list-group-item-action';
-      li.innerHTML = `<div>${i}${name}</div><div>${mail}</div>`;
+      li.innerHTML = `<div>${item.name}</div><div>${item.mail}</div>`;
       result.push(li);
-    }
+    })
   
     return result;
   }
-  let ul = document.getElementById('list');
-  ul.append(...getListContent());
   
 }, false)
