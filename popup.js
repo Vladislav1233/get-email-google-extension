@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let timerId;
   let ul = document.getElementById('list');
 
+  searchField.focus();
+
   searchField.oninput = function() {
 
     function removeItems() {
@@ -130,5 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let target = event.target.closest('li');
     navigator.clipboard.writeText(target.childNodes[1].textContent)
   })
+
+  chrome.commands.onCommand.addListener(function(command) {
+    alert('Command:', command);
+  });
   
 }, false)

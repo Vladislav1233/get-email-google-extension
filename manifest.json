@@ -14,5 +14,15 @@
   },
   "permissions": [
     "tabs"
-  ]
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+I",
+        "linux": "Ctrl+I",
+        "windows": "Ctrl+I",
+        "mac": "Alt+I"
+      }
+    }
+  }
 }
