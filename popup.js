@@ -114,7 +114,15 @@ document.addEventListener('DOMContentLoaded', function() {
       clearTimeout(timerId);
       timerId = setTimeout(function() {
         removeItems();
-        ul.append(...getListContent(searchField.value));
+        let listContent = getListContent(searchField.value);
+        if(listContent.length) {
+          ul.append(...listContent);
+        } else {
+          let li = document.createElement('div');
+          li.className = 'list-group-item';
+          li.innerHTML = 'Не найдено';
+          ul.append(li);
+        }
       }, 500)
     } else {
       setTimeout(function() {
@@ -138,7 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   ul.addEventListener('click', function(event) {
     let target = event.target.closest('li');
-    navigator.clipboard.writeText(target.childNodes[1].textContent)
+    if(target) {
+      navigator.clipboard.writeText(target.childNodes[1].textContent)
+    }
   });
   
 }, false)
