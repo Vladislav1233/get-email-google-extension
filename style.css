@@ -3,12 +3,21 @@
 }
 
 .alert {
-    position: fixed;
-    z-index: 10;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 16px;
     width: calc(100% - 32px);
+}
+
+.alert-wrap {
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .list-group-item {
