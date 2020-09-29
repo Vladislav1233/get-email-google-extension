@@ -148,7 +148,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let target = event.target.closest('li');
     if(target) {
       navigator.clipboard.writeText(target.childNodes[1].textContent)
-    }
+    };
+    document.getElementsByClassName('js-alert-success')[0].classList.add('d-block');
+    setTimeout(function() {
+      window.close();
+    }, 800);
   });
   
 }, false)

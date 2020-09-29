@@ -1,3 +1,16 @@
 .page-wrapper {
     width: 500px;
 }
+
+.alert {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    width: calc(100% - 32px);
+}
+
+.list-group-item {
+    cursor: pointer;
+}
