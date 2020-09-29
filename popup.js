@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getListContent(searchData) {
 
     let resultSearch = data.filter((item) => {
-      if(item.name.match(searchData)) {
+      if(item.name.toLowerCase().match(searchData.toLowerCase())) {
         return true
       }
       return false
